@@ -1,5 +1,7 @@
 <?php
 
+#### HACERLO CLASE CON METODOS #####
+
 $filedir  = "frases.txt";
 
 # Obtiene el contenido de texto del fichero y lo desglosa en un array
