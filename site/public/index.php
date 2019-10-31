@@ -12,7 +12,7 @@
 #    print_r($array);    // Imprime el array en forma de texto
 
 
-    d($array); // d() es una funcion que te muestra de manera visual los datos.
+    d($array); // d() es una funcion que te muestra de manera visual los datos. DE la libreria "Kint"
 
   $array_2 = [
     'Manz',
@@ -37,6 +37,18 @@
 
 
     ##############  SECURIZACIÓN   ####################
-    $_GET['id'] = (int)$_GET['id']  //Te lo convierte a tipo numero, da igual que metas una string.
+    $_GET['id'] = (int)$_GET['id'];  //Te lo convierte a tipo numero, da igual que metas una string.
+
+    $user = preg_replace('/[^\w_\.-]/S', '', $_GET['user']);
+    d($user);
+
+#    d($_SERVER);  // Si lo pones solo te da un array con todas la información que te coge
+
+  ##############  LLAMADAS AL SISTEMA   ####################
+
+  $resultado = `uptime`;
+#  echo "->$resultado<-";
+#  echo "=>". $resultado[1] ."<=";
+
 
 ?>
