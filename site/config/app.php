@@ -9,26 +9,26 @@ return [
         'twig' => [ 'cache' => false ]
     ],
     'db' => [
-        'driver' => 'mysql',
+        'driver' => 'txt',
         'mysql' => [
-        'driver' => 'mysql',
-        'host' => '192.168.1.111:3344',
-        'database' => 'db_test',
-        'username' => 'testuser',
-        'password' => 'testuser@docker',
-        'charset'   => 'utf8',
-        'collation' => 'utf8_spanish2_ci',
-        'prefix'    => ''
+            'driver' => 'mysql',
+            'host' => '192.168.1.111:3344',
+            'database' => 'db_test',
+            'username' => 'testuser',
+            'password' => 'testuser@docker',
+            'charset'   => 'utf8',
+            'collation' => 'utf8_spanish2_ci',
+            'prefix'    => ''
         ],
         'json' => [
-        'driver' => 'json',
-        'filename' => 'pokemons.json',
-        'path' => __DIR__ . '/../database'
+            'driver' => 'json',
+            'filename' => 'pokemons.json',
+            'path' => __DIR__ . '/../database'
         ],
         'txt' => [
-        'driver' => 'txt',
-        'filename' => 'phrases.txt',
-        'path' => __DIR__ . '/../database'
+            'driver' => 'txt',
+            'filename' => 'frases.txt',
+            'path' => __DIR__ . '/../database'
         ]
     ]
     ]
