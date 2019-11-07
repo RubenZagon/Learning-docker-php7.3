@@ -13,6 +13,8 @@ $aContainer['view'] = function ($cContainer){
         $cContainer -> router,
         $cContainer -> request -> getUri ()
     ));
+
+    return $vViews;
 };
 
 $aContainer['Frases_Controller'] = function ($cContainer) {
@@ -22,4 +24,8 @@ $aContainer['Frases_Controller'] = function ($cContainer) {
 $aContainer['db'] = function ($cContainer) {
 
     $aConfig = $cContainer -> get('config')['db'];
+};
+
+$aContainer['Home_Controller'] = function ($cContainer) {
+    return new \Controller\Home_Controller($cContainer);
 };
