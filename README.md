@@ -41,4 +41,4 @@ Ejemplo:
 | ------------------------- | ----------------------------------------------------- | 
 |  /random-frase            | Una frase aleatoria                                   |
 |  /todas-las-frases        | Toda las frases en la base de datos                   |
-|  /id-frase/<id-frase>     | Muestra la frase que se ha especificado por su índice |
+|  /id-frase/(id-frase)     | Muestra la frase que se ha especificado por su índice |
