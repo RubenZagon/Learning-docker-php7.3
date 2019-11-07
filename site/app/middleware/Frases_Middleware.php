@@ -7,8 +7,6 @@ use Psr\Container\ContainerInterface as Container,
     Psr\Http\Message\ResponseInterface as Response;
 
 
-
-
 class Frases_Middleware {
 
     public function __invoke (Request $rRequest, Response $rResponse, $cNext){

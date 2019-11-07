@@ -21,11 +21,11 @@ $aContainer['Frases_Controller'] = function ($cContainer) {
     return new \Controller\Frases_Controller($cContainer);
 };
 
+$aContainer['Home_Controller'] = function ($cContainer) {
+    return new \Controller\Home_Controller($cContainer);
+};
+
 $aContainer['db'] = function ($cContainer) {
 
     $aConfig = $cContainer -> get('config')['db'];
-};
-
-$aContainer['Home_Controller'] = function ($cContainer) {
-    return new \Controller\Home_Controller($cContainer);
 };

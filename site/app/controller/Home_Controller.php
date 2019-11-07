@@ -16,7 +16,7 @@ class Home_Controller {
         $this -> aContainer = $cContainer;
     }
 
-    public function getHome (Request $rRequest, Response $rResponse){
+    public function getHome (Request $rRequest, Response $rResponse, $args){
 
         $aParameters = [
             'aPage' => [
@@ -25,7 +25,7 @@ class Home_Controller {
             ]
         ];
 
-        return $this -> view -> render ($rResponse, 'plantilla.twig', $aParameters);
+        return $this -> aContainer -> view -> render ($rResponse, 'plantilla.twig', $aParameters);
     }
 
 }
