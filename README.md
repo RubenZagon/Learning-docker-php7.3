@@ -18,7 +18,9 @@ Aquí trabajamos con el framework Slim, el mismo ejercicio con 25 frases podremo
 3. Instalamos las dependencias que necesita PHP con el composer dentro del docker
 
     `sudo docker exec <ID-contenedor> composer install`
+
     `sudo docker exec <ID-contenedor> composer clear-cache`
+    
     `sudo docker exec <ID-contenedor> composer dump-autoload`
 
 4. Abrimos un navegador con la dirección *localhost:8080* ó *0.0.0.0:8080*
