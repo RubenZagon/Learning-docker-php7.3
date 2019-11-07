@@ -13,32 +13,32 @@ class Frases_Controller {
 
     protected $atributo_Container;
 
-    public function __construct (Container $entrada_Container) {
+    const FILEDIR = '../database/frases.txt';
 
+    private $getFile = file(self::FILEDIR);
+
+    public function __construct (Container $entrada_Container) {
+        
         $this -> atributo_Container = $entrada_Container;
     }
 
 
     public function randomPhrase (Request $rRequest, Response $rResponse, $args ){
 
-        $filedir  = "../database/frases.txt";
-
         # Obtiene el contenido de texto del fichero y lo desglosa en un array
-        $getFile = file($filedir);
+        //$getFile = file(self::FILEDIR);
 
         # Genera un número aleatorio, midiendo la totalidad de frases que hay
-        $getMAX = count($getFile);
+        $getMAX = count($this -> getFile);
         $random = mt_rand(0, $getMAX);
 
-        return $getFile[$random];
+        return $this -> getFile[$random];
     }
 
     public function allPhrases (Request $rRequest, Response $rResponse, $args){
 
-        $filedir  = "../database/frases.txt";
-
         # Obtiene el contenido de texto del fichero y lo desglosa en un array
-        $getFile = file($filedir);
+        $getFile = file(self::FILEDIR);
 
         # Imprime todas las frases en la página
         echo "<h1> Todas las frases</h1>";
@@ -52,10 +52,8 @@ class Frases_Controller {
 
     public function getPhraseByID (Request $rRequest, Response $rResponse, $args){
 
-        $filedir  = "../database/frases.txt";
-
         # Obtiene el contenido de texto del fichero y lo desglosa en un array
-        $getFile = file($filedir);
+        $getFile = file(self::FILEDIR);
 
         # Mediante el argumento que le metemos, se selecciona el elemento del array, se le pone un -1 porque el array comienza el elemento 1. en la posición 0
         return $getFile[$args["id"]-1];
