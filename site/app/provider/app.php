@@ -25,7 +25,10 @@ $aContainer['Home_Controller'] = function ($cContainer) {
     return new \Controller\Home_Controller($cContainer);
 };
 
-$aContainer['db'] = function ($cContainer) {
+$aContainer['Pokemon_Controller'] = function ($cContainer){
+    return new \Controller\Pokemon_Controller($cContainer);  
+};
 
+$aContainer['db'] = function ($cContainer) {
     $aConfig = $cContainer -> get('config')['db'];
 };

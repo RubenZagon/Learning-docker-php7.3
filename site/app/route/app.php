@@ -13,3 +13,5 @@ $aApp -> get ('/todas-las-frases', Frases_Controller::Class . ':allPhrases');
 $aApp -> get ('/id-frase/{id}', Frases_Controller::Class . ':getPhraseByID');
 
 $aApp -> get ('/', Home_Controller::Class . ':getHome');
+
+$aApp -> get ('/pokemon', Pokemon_Controller::Class . ':randomPokemon');
