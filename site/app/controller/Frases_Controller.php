@@ -11,16 +11,16 @@ use Psr\Container\ContainerInterface as Container,
 
 class Frases_Controller {
 
-    protected $atributo_Container;
+    protected $aContainer;
 
     private $getFile;
 
-    public function __construct (Container $entrada_Container) {
+    public function __construct (Container $cContainer) {
 
         # Obtiene el contenido de texto del fichero y lo desglosa en un array
         $this -> getFile = file('../database/frases.txt');
 
-        $this -> atributo_Container = $entrada_Container;
+        $this -> aContainer = $cContainer;
     }
 
 
@@ -30,7 +30,14 @@ class Frases_Controller {
         $getMAX = count($this -> getFile);
         $random = mt_rand(0, $getMAX);
 
-        return $this -> getFile[$random];
+        $aParameters = [
+            'aFrases' => [
+                'strTitle' => 'Refranes',
+                'aRefranRandom' =>  $this -> getFile[$random]
+                ] 
+            ];
+
+        return $this -> aContainer -> view -> render ($rResponse, 'frases.twig', $aParameters);
     }
 
 
