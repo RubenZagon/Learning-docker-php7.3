@@ -26,9 +26,19 @@ $aContainer['Home_Controller'] = function ($cContainer) {
 };
 
 $aContainer['Pokemon_Controller'] = function ($cContainer){
-    return new \Controller\Pokemon_Controller($cContainer);  
+    return new \Controller\Pokemon_Controller($cContainer);
 };
 
 $aContainer['db'] = function ($cContainer) {
+
+    $mManager = new \Illuminate\Database\Capsule\Manager;
+
     $aConfig = $cContainer -> get('config')['db'];
+
+    $mManager -> addConnection($aConfig[$aConfig['driver']]);
+
+    $mManager -> setAsGlobal();
+    $mManager -> bootEloquent();
+
+    return $mManager;
 };

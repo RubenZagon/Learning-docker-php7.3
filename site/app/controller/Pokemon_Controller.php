@@ -6,6 +6,8 @@ use Psr\Container\ContainerInterface as Container,
     Psr\Http\Message\ServerRequestInterface as Request,
     Psr\Http\Message\ResponseInterface as Response;
 
+use Model\Pokemon_Model;
+
 class Pokemon_Controller{
     protected $aContainer;
 
@@ -30,6 +32,20 @@ class Pokemon_Controller{
     echo $aData[$random]['id'];
 
     d($aData);
+
+
+    $aParameters = [
+        'aPage' => [
+            'srtTitle' => 'Pokemon Random',
+            'srtDescription' => 'Muestra un pokemon random de los 151'
+        ],
+        'aPokemon' => $aData[$random]['id']
+
+    ];
+
+
+
+    return $this -> aContainer -> view -> render ($rResponse, 'pokemon.twig', $aParameters);
     }
 
     public function getAll (Request $rRequest, Response $rResponse){
@@ -43,5 +59,18 @@ class Pokemon_Controller{
 
         }
     return;
+    }
+
+    public function mysql (Request $rRequest, Response $rResponse){
+
+        $aConfig = $this -> aContainer -> get('config');
+
+        $aData = $this -> aContainer -> db -> table('pokemons') -> get();
+
+        d($aData);
+
+        d($aData[5]);
+
+        //echo $aData[0][0];
     }
 }

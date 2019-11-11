@@ -9,7 +9,7 @@ return [
         'twig' => [ 'cache' => false ]
     ],
     'db' => [
-        'driver' => 'txt',
+        'driver' => 'mysql',
         'mysql' => [
             'driver' => 'mysql',
             'host' => '192.168.1.111:3344',
