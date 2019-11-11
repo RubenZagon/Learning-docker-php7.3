@@ -35,6 +35,8 @@ $aContainer['db'] = function ($cContainer) {
 
     $aConfig = $cContainer -> get('config')['db'];
 
+    if ($aConfig['driver'] != 'mysql') return $aConfig[$aConfig['driver']];
+
     $mManager -> addConnection($aConfig[$aConfig['driver']]);
 
     $mManager -> setAsGlobal();

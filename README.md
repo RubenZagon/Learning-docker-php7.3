@@ -39,6 +39,6 @@ Ejemplo:
 
 |  url                      |     Descripción                                       |
 | ------------------------- | ----------------------------------------------------- |
-|             |                                   |
-|  /        |                   |
-|  /    |  |
+|  /pokemon                 |  Muestra un pokemon aleatorio                         |
+|  /pokemon/all             |  Muestra todos los pokemons en la lista               |
+|  /pokemon/mysql           |  :construcction: Toma la información de una base de datos, que ahora mismo no está operativa      |
